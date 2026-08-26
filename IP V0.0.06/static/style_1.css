@@ -1,0 +1,733 @@
+/* Main page */
+body {
+    background-color: #111;
+    color: white;
+    font-family: "Pixelify Sans", sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Main title */
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px #444;
+}
+
+
+/* Timeline / smaller headings */
+h2 {
+    color: #aaa;
+}
+
+
+/* Canvas */
+canvas {
+    background-color: white;
+
+    border: 4px solid #333;
+    border-radius: 8px;
+
+    cursor: crosshair;
+
+    image-rendering: pixelated;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.2);
+}
+
+.canvasWrapper {
+    position: relative;
+    width: 500px;
+    margin: 0 auto;
+}
+
+#canvas {
+    display: block;
+}
+
+#ZoomOut {
+    position: absolute;
+    left: calc(100% + 10px);
+    bottom: 0;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    background-color: #777;
+    border: 2px solid white;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+#ZoomOut:hover {
+    transform: scale(1.2);
+}
+
+#ZoomOut img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#ZoomIn {
+    position: absolute;
+    left: calc(100% + 10px);
+    bottom: 40px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+    background-color: #777;
+    border: 2px solid white;
+    border-radius: 5px;
+
+    cursor: pointer;
+    transition: transform 0.15s;
+}
+
+#ZoomIn:hover {
+    transform: scale(1.2);
+}
+
+#ZoomIn img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+/* Color picker */
+#colorPicker {
+
+    margin-top: 15px;
+
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+}
+
+
+#colorPicker button {
+
+    border: 2px solid white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: transform 0.15s;
+
+}
+
+
+#colorPicker button:hover {
+
+    transform: scale(1.2);
+
+}
+
+
+/* Links */
+a {
+
+    color: #00aaff;
+
+    text-decoration: none;
+
+}
+
+
+a:hover {
+
+    color: cyan;
+
+    text-decoration: underline;
+
+}
+
+
+/* Feature pages */
+p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.6;
+
+}
+
+
+/* General containers */
+.container {
+
+    background-color: #1b1b1b;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    box-shadow:
+        0 0 20px rgba(0,0,0,0.5);
+
+}
+.navbar {
+    font-family: "Pixelify Sans", sans-serif;
+
+    margin-top: 0;
+
+    padding-top: 0;
+
+    width: 100%;
+
+    background-color: #1a1a1a;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0px 0px;
+
+    box-sizing: border-box;
+
+    border-bottom: 2px solid #333;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+
+    
+
+}
+
+
+.logo {
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: white;
+
+}
+
+
+.links {
+
+    display: flex;
+
+    gap: 20px;
+
+}
+
+
+.links a {
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.2s;
+
+}
+
+
+.links a:hover {
+
+    color: white;
+
+    transform: translateY(-2px);
+
+}
+.popup {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.7);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.popupBox {
+
+    background: #222;
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: 0 0 20px black;
+
+}
+
+
+.popupBox button {
+
+    background: #00aaff;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+.popup {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
+
+}
+
+
+.popupBox {
+
+    background: #222;
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    width: 350px;
+
+    box-shadow:
+        0 0 30px black;
+
+    animation: popupAppear 0.3s ease;
+
+}
+
+
+.popupBox button {
+
+    background: #00aaff;
+
+    color: white;
+
+    border: none;
+
+    padding: 12px 25px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+
+.popupBox button:hover {
+
+    background: cyan;
+
+}
+
+
+@keyframes popupAppear {
+
+    from {
+
+        transform: scale(0.8);
+
+        opacity: 0;
+
+    }
+
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+}
+/* Navbar */
+
+.navbar {
+
+    font-family: "Pixelify Sans", sans-serif;
+
+    width: 100%;
+
+    background: #1a1a1a;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 15px 25px;
+
+    box-sizing: border-box;
+
+    border-bottom: 2px solid #333;
+
+}
+
+
+.logo {
+
+    color: white;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+
+.navbar button {
+
+    font-family: "Pixelify Sans", sans-serif;
+
+    background: #7a7976;
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.navbar button:hover {
+
+    background: #5c5b58;
+
+}
+
+
+
+/* Popup */
+
+.popup {
+
+    font-family: "Pixelify Sans", sans-serif;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+
+    width: 100%;
+
+    height: 100%;
+
+
+    background: rgba(0,0,0,0.6);
+
+
+    backdrop-filter: blur(8px);
+
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+
+    z-index: 1000;
+
+}
+
+
+
+.popupBox {
+
+    background: #222;
+
+    color: white;
+
+
+    width: 350px;
+
+
+    padding: 30px;
+
+
+    border-radius: 15px;
+
+
+    text-align: center;
+
+
+    box-shadow:
+
+        0 0 30px black;
+
+
+    animation: popupAppear 0.3s ease;
+
+    font-family: "Pixelify Sans", sans-serif;
+}
+
+
+
+.popupBox button {
+
+    font-family: "Pixelify Sans", sans-serif;
+
+    background: #7a7976;
+
+
+    color: white;
+
+
+    border: none;
+
+
+    padding: 12px 25px;
+
+
+    border-radius: 8px;
+
+
+    cursor: pointer;
+
+}
+
+
+
+.popupBox button:hover {
+
+    background: cyan;
+
+}
+
+
+
+#infoPopup {
+
+    display: none;
+
+}
+
+canvas {
+    touch-action: none;
+}
+
+.serverCard {
+    min-width: 500px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 20px;
+
+    border: 2px solid #666;
+    border-radius: 10px;
+
+    background: #222;
+}
+
+.serverCard img {
+    width: 160px;
+    height: 160px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+
+    flex-shrink: 0;
+}
+
+/* Credits Popup */
+
+.creditsBox {
+    width: 500px;
+    max-width: 90vw;
+}
+
+.creditsScroll {
+    max-height: 400px;
+    overflow-y: auto;
+
+    padding: 10px 15px;
+    margin: 15px 0;
+
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+
+    text-align: left;
+}
+
+/* Individual credit */
+
+.credit {
+    padding: 15px 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.credit:last-child {
+    border-bottom: none;
+}
+
+.credit h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+}
+
+.credit p {
+    margin: 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Final thank-you message */
+
+.credit .thanks {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Scrollbar */
+
+.creditsScroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+#eyedropperButton img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.creditsScroll::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.creditsScroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+}
+
+.creditsScroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.serverInfo {
+    flex: 1;
+}
+
+.pixel-art {
+    width: 16px;
+    height: 16px;
+    image-rendering: pixelated;
+}
+
+.item img {
+    width: 0.7em;
+    height: 0.7em;
+
+    image-rendering: pixelated;
+    image-rendering: crisp-edges; /* Balls */
+}
+
+@keyframes popupAppear {
+    
+
+    from {
+
+        transform: scale(0.8);
+
+        opacity: 0;
+
+    }
+
+
+    to {
+
+        transform: scale(1);
+
+        opacity: 1;
+
+    }
+
+
+}

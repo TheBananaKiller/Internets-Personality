@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <title>Internet's Personality</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_1.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='Favicon.png') }}">
+</head>
+
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<nav class="navbar">
+
+    <div class="item">
+    <img src="static\img\HeartInternetP.png" alt="hi">
+    <p>
+        Internets Personality
+    </p>
+</div>
+
+    <button onclick="openInfo()">
+        Info
+    </button>
+
+    <button onclick="OpenControls()">
+        Controls
+    </button>
+
+    <button onclick="openUpcoming()">
+        Upcoming
+    </button>
+    <button onclick="discordinvite()">
+        Our Discord
+    </button>
+    <button onclick="openCredits()">
+        Credits
+    </button>
+</nav>
+
+
+
+<!-- WELCOME POPUP -->
+
+<div id="welcomePopup" class="popup">
+
+    <div class="popupBox">
+
+        <h2><img src="static\img\HeartInternetP.png" alt="hi"> Welcome!</h2>
+
+        <p>
+            <h2><strong>WARNING</strong></h2>
+            <strong>Welcome to the Internet's Personality!</strong> 
+            This website is currently <strong>not moderated</strong> and is meant to be a representation of the internet in one canvas . Thus, you <strong>may see imagery not appropriate for all ages. You have been warned.</strong>
+        </p>
+
+        <button onclick="closeWelcome()">
+            Enter
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<!-- ABOUT POPUP -->
+
+<div id="infoPopup" class="popup">
+
+    <div class="popupBox">
+
+        <h2>Info</h2>
+
+        <div class="infoText">
+            <p>
+                Internet's Personality is a shared online canvas where anyone can create art, express themselves, and leave their mark on the internet. Our goal is to capture the creativity, culture, and personality of the online world within a single 16-color canvas. We hope you enjoy exploring, creating, and contributing as much as we have enjoyed building it.
+            </p>
+
+            <p>
+                There is a large update every 5 updates, going 0.0.05, 0.0.1, 0.0.15 etc.
+            
+            </p>
+                <h1>Fun Facts!</h1>
+            <p>
+                The first edition of this website was made on a Sunday afternoon in around 6 hours.         <br>
+
+                The idea for this website comes from Spi7nix's Geometry Dash level made by his fans. <br>
+
+                The website was originally going to have a proceduraly generated canvas depending on how far you go.<br>
+
+                This whole website is made with love by The Banana Killer.
+            </p>
+        </div>
+
+        <button onclick="closeInfo()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<div id="Creditspopup" class="popup">
+
+    <div class="popupBox creditsBox">
+
+        <h2>Creators</h2>
+
+        <div class="creditsScroll">
+
+            <div class="credit">
+                <h3>My Dad</h3>
+                <p>
+                    My dad taught me Python when I was just seven years old, so without him,
+                    I would've never learned how to program. Not only that, but at least 80%
+                    of the actual stuff needed to make a proper URL, Flask, SQL Server, and
+                    so much more just wouldn't be possible without him.
+                </p>
+            </div>
+
+            <div class="credit">
+                <h3>Jamalama</h3>
+                <p>
+                    Jamalama was the first person I talked to about my idea of making a canvas
+                    anybody could draw on forever. He had at least a thousand pretty interesting
+                    ideas (like making the design of the website Unicode (?!?!)) that, while
+                    they didn't make the final cut, showed me how supportive he was of the
+                    project, as he is with most projects I make.
+                </p>
+            </div>
+
+            <div class="credit">
+                <h3>Payday</h3>
+                <p>
+                    Payday is one of my closest friends who is always pretty bare-bones with me
+                    and will say it straight. When I showed him this project and even he was
+                    impressed, that helped me keep going.
+                </p>
+            </div>
+
+            <div class="credit">
+                <h3>My Mom</h3>
+                <p>
+                    My mom has always supported me through each project I make, even if she
+                    doesn't understand code.
+                </p>
+            </div>
+
+            <div class="credit">
+                <h3>You Guys</h3>
+                <p>
+                    The biggest inspiration for me is when somebody likes the thing I'm making.
+                    So, by just visiting the website and leaving your mark, you have supported
+                    me in making this project.
+                </p>
+
+                <p class="thanks">
+                    Thanks so much. <img src="static\img\HeartInternetP.png" alt="hi">
+                </p>
+            </div>
+
+        </div>
+
+        <button onclick="closeCredits()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<div id="controllspopup" class="popup">
+
+    <div class="popupBox">
+
+        <h2>Controlls</h2>
+
+        <p>
+            Click - place pixel<br>
+            Middle Mouse Button (hold) - Pans Canvas<br>
+            S (hold) - Pans Canvas
+            Arrow Buttons - Pan (again)
+            {BETA} Mobile Controlls added! Two fingers to drag, one to place a pixel.
+        </p>
+
+        <button onclick="closeControls()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<div id="upcomingpopup" class="popup">
+
+    <div class="popupBox">
+
+        <h2>Upcoming Features</h2>
+
+        <p>
+            
+            Adding a teleport feature to be able to go anywhere on the canvas (that has art on it)<br>
+            Small moderation (not innapropriate art, but illegal art)<br>
+            Better Optimization for client side and server side.
+            <H1>FINISHED FEATURES</H1>
+            <s>Keeping current art on canvas after update</s><br>
+        </p>
+
+        <button onclick="closeUpcoming()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<div id="mobileControlsPopup" class="popup">
+
+    <div class="popupBox">
+
+        <h2>Mobile Controls</h2>
+
+        <p>
+            <strong>⚠️ BETA</strong>
+        </p>
+
+        <p>
+            Mobile controls are currently in beta and may not work perfectly.
+        </p>
+
+        <p>
+            <strong>Two fingers:</strong> Move the canvas around.
+        </p>
+
+        <p>
+            <strong>One finger:</strong> Place a pixel.
+        </p>
+
+        <button onclick="closeMobileControls()">
+            Got it
+        </button>
+
+    </div>
+
+</div>
+
+<!-- THE CANVAS -->
+<h1 class="item">
+    <span>Internets Personality</span>
+
+    <img src="/static/img/HeartInternetP.png" alt="Logo">
+
+    <span><br>V0.0.06!</span>
+</h1>
+
+
+
+<div class="canvasWrapper">
+    <canvas id="canvas"></canvas>
+    <button id="ZoomOut"><img src="{{ url_for('static', filename='Zoomout.png') }}" alt="Zoom Out"></button>
+    <button id="ZoomIn"><img src="{{ url_for('static', filename='Zoomin.png') }}" alt="Zoom In"></button>
+</div>
+
+
+<div id="colorPicker"></div>
+
+
+
+<script src="{{ url_for('static', filename='canvas.js') }}"></script>
+
+
+<h1>TIMELINE</h1>
+<h2>Version 0.0.06</h2>
+Added Zoom <br> Added Credits
+<h2><strong>Version 0.0.05</strong></h2>
+<strong>Added Database so art now saves between updates!</strong> <br> Added General Improvments (Two) <br> Added 32 colors <br> Added new font <br> Fixed navbar being too small. <br> Added Mobile controlls (still in beta)
+<h2>Version 0.0.04</h2>
+S now also enables dragging.<br>Added a Navagation Bar.<br> Overhauled style and UI.<br>Added Upcoming Features tab. <br> Fixed typo in Timeline Version 0.0.03
+<h2>Version 0.0.03</h2>
+Added timeline<br>Added dragging(Middle mouse button)<br>Added a new 16 color list<br>Added a almost infinate canvas.
+
+<div class="canvasContainer">
+
+    
+
+
+</div>
+
+<script>
+
+function openCredits() {
+
+    document.getElementById("Creditspopup").style.display = "flex";
+
+}
+
+function closeCredits() {
+
+    document.getElementById("Creditspopup").style.display = "none";
+
+}
+
+function closeWelcome() {
+
+    document.getElementById("welcomePopup").style.display = "none";
+
+}
+
+
+
+function openInfo() {
+
+    document.getElementById("infoPopup").style.display = "flex";
+
+}
+
+
+
+function closeInfo() {
+
+    document.getElementById("infoPopup").style.display = "none";
+
+}
+function discordinvite(){
+    window.open("https://discord.gg/JkAH8cCyn", "_blank");
+}
+function OpenControls(){
+    document.getElementById("controllspopup").style.display = "flex";
+}
+
+function closeControls(){
+    document.getElementById("controllspopup").style.display = "none";
+}
+
+function openUpcoming(){
+    document.getElementById("upcomingpopup").style.display = "flex";
+}
+
+function closeUpcoming(){
+    document.getElementById("upcomingpopup").style.display = "none";
+}
+
+
+</script>
+
+<script>
+
+function openInfo() {
+
+    document.getElementById("infoPopup").style.display = "flex";
+
+}
+
+
+function closeInfo() {
+
+    document.getElementById("infoPopup").style.display = "none";
+
+}
+
+
+function closeWelcome() {
+
+    document.getElementById("welcomePopup").style.display = "none";
+
+}
+
+document.getElementById("controllspopup").style.display = "none";
+document.getElementById("upcomingpopup").style.display = "none";
+document.getElementById("Creditspopup").style.display = "none";
+</script>
+
+</body>
+
+</html>
