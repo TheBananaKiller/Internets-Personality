@@ -7,10 +7,10 @@ app = Flask(__name__)
 
 conn_str = (
     r"DRIVER={ODBC Driver 17 for SQL Server};"
-    r"SERVER=192.168.1.12;"
+    r"SERVER={RESTRICTED};"
     r"DATABASE=InternetsPersonality;"
     r"UID=InternetsPersonality;"
-    r"PWD=Pixels_are_cool57;"
+    r"PWD={RESTRICTED};"
     r"Encrypt=yes;"
     r"TrustServerCertificate=yes;"
 )
